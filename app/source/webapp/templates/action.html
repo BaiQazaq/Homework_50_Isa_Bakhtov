@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <title>Data</title>
+</head>
+<body>
+<div class="container">
+    <div class = "main string ms-3 d-flex mb-3">
+        <img src="/static/{{ img_cat }}" style="width: 250px">
+        <div>
+            <p>Cat {{ name }}</p>
+            <p>Age {{ age }}</p>
+            <p>Level of feeling {{ feeling }}</p>
+            <p>Level of fullness {{ feeding }}</p>
+            <p>State {{ state }}</p>
+        </div>
+    </div>
+       <div>
+           <p>{{ warning }}</p>
+       </div>
+    <form class="form_create" action="" method="post">
+        {% csrf_token %}
+        <div class="form-row">
+            <select name="action" id="action" style="width: 150px; height: 30px; font-size: 15px">
+                <option value="" disabled selected>Select the action</option>
+                <option value="play">Play with cat</option>
+                <option value="feed">Feeding cat</option>
+                <option value="sleep">Put to sleep</option>
+            </select>
+        </div>
+        <button type="submit" style="width: 96px; height: 36px; font-size: 15px; margin-top: 15px">Confirm</button>
+    </form>
+</div>
+</body>
+</html>

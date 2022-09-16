@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <title>CAT</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Hi!</h1>
+        <h1>This is simulator of cat</h1>
+        <h1>Please enter the name of cat</h1>
+        <h1 style="color: red; font-size: 20px;">{{ warning }}</h1>
+
+
+        <form class="form_create" action="action/" method="post">
+        {% csrf_token %}
+        <div class="create_input">
+             <input type="text" name="name" id="name" placeholder="Enter the name of cat" style="width: 150px; height: 30px; font-size: 15px" required>
+        </div>
+        <div class="create_button" style="margin-top: 15px;">
+            <button type="submit" style="width: 96px; height: 36px; font-size: 15px">Create</button>
+        </div>
+        </form>
+    </div>
+</body>
+</html>

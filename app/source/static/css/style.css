@@ -1,0 +1,10 @@
+ body{
+    font-family: Arial sans-serif;
+    color: #222;
+}
+.container{
+    text-align: center;
+    margin-left: 100px;
+    padding-top: 100px;
+}
+
